@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3> Localizaciones </h3>
+    <ul>
+        {% for localizacion in object_list %}
+        <li>
+            <a href="{% url 'localizacion_detail' localizacion.pk %}">
+               {{ localizacion.distrito}} </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

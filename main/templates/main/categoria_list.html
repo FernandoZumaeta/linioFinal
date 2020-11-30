@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    &nbsp
+    <h3 class="subtitle"> Categorias </h3>
+
+
+    <div class="columns is-multiline">
+            {% for categoria in object_list %}
+                <div class="column is-4">
+                                <a href="{% url 'categoria_detail' categoria.pk %}">
+                                    {{ categoria.nombre }}
+                                </a>
+                </div>
+            {% empty %}
+                <div class="content">
+                    <h6> No hay categorías disponibles.</h6>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
